@@ -30,3 +30,16 @@ NodeRecord PathFindingList::getSmallestElement() {
 	}
 
 }
+
+void PathFindingList::display() {
+	if (nodes.size() != 0) {
+		for (int i = 0; i < nodes.size(); i++) {
+			nodes[i].display();
+		}
+	}
+	else
+	{
+		cout << "impossible your list is empty\n";
+	}
+	
+}

@@ -12,6 +12,7 @@ public:
 	int getCostSoFar() { return costSoFar; };
 	void setName(std::string nameP);
 	void setCost(int costP);
+	void display();
 
 private:
 	std::string name;

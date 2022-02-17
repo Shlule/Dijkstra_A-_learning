@@ -3,15 +3,33 @@
 #include"Graph.h"
 #include"PathFindingList.h"
 #include"NodeRecord.h"
+#include"Connection.h"
 #include <iostream>
 using namespace std;
 
-void getGraphSolution(Graph graphP, string start, string end) {
+void getGraphSolution(Graph& graphP, string start, string end) {
     // j'initialise les open and close list
     PathFindingList open;
     PathFindingList close;
+    NodeRecord currentNode;
+    vector<Connection>temp;
+
 
     // verify if the start and end node exist in the graph
+    if (graphP.isNodeExist(start) && graphP.isNodeExist(end)) {
+        // initialize startNode
+        currentNode = NodeRecord(0, start);
+        close.AddNode(currentNode);
+    }
+
+    temp = graphP.getConnection(currentNode.getName());
+
+    for (int i = 0; i < temp.size(); i++) {
+        open.AddNode(NodeRecord(temp[i].getCost(), temp[i].getToNode()));
+    }
+
+    open.display();
+
 
 
     // initialize currentNode reference to the node we treat
@@ -28,7 +46,8 @@ int main()
     
     
     graph.generatePath();
-
+    getGraphSolution(graph, "A", "F");
+    cout<< graph.isNodeExist("montpellier");
 
 
     //graph.displayConnection(graph.getConnection("A"));

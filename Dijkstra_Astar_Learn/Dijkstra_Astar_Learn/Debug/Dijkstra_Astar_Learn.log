@@ -1,7 +1,3 @@
 ﻿  Dijkstra_Astar_Learn.cpp
-  PathFindingList.cpp
-C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\PathFindingList.cpp(10,21): warning C4018: '<' : incompatibilité signed/unsigned
-C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\PathFindingList.cpp(23,21): warning C4018: '<' : incompatibilité signed/unsigned
-  Génération de code en cours...
-C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\PathFindingList.cpp(32): warning C4715: 'PathFindingList::getSmallestElement' : les chemins de contrôle ne retournent pas tous une valeur
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn.cpp(27,23): warning C4018: '<' : incompatibilité signed/unsigned
   Dijkstra_Astar_Learn.vcxproj -> C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Debug\Dijkstra_Astar_Learn.exe
