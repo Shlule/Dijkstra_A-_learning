@@ -1,0 +1,7 @@
+﻿  Dijkstra_Astar_Learn.cpp
+  Graph.cpp
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\Graph.cpp(45,20): warning C4018: '<' : incompatibilité signed/unsigned
+  PathFindingList.cpp
+  Génération de code en cours...
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\Graph.cpp(66): warning C4715: 'Graph::getConnection' : les chemins de contrôle ne retournent pas tous une valeur
+  Dijkstra_Astar_Learn.vcxproj -> C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Debug\Dijkstra_Astar_Learn.exe
