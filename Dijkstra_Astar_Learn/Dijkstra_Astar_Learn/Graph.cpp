@@ -64,3 +64,12 @@ vector<Connection> Graph::getConnection(string fromNodeP) {
 	}
 
 }
+
+bool Graph::isNodeExist(string nameP) {
+	bool corresponding;
+	for (int i = 0; i < nodeNames.size(); i++) {
+		corresponding= nodeNames[i] == nameP;
+		break;
+	}
+	return corresponding;
+}

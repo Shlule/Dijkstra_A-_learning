@@ -11,6 +11,7 @@ public:
 	std::vector<Connection> getConnections(std::string fromNodeP);
 	std::vector<Connection> getConnection(std::string fromNodeP);
 	void displayConnection(const std::vector<Connection>& connections)const;
+	bool isNodeExist(std::string nameP);
 	void generatePath();
 	int bNum = 1000;
 	int matriceProxi[7][7]{

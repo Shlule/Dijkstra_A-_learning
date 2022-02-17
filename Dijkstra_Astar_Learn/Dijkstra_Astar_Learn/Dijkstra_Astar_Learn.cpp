@@ -2,14 +2,37 @@
 //
 #include"Graph.h"
 #include"PathFindingList.h"
+#include"NodeRecord.h"
 #include <iostream>
+using namespace std;
 
+void getGraphSolution(Graph graphP, string start, string end) {
+    // j'initialise les open and close list
+    PathFindingList open;
+    PathFindingList close;
+
+    // verify if the start and end node exist in the graph
+
+
+    // initialize currentNode reference to the node we treat
+
+    // add current node in close list
+
+    // add Node connected to current node in open list if they are'nt in close list
+
+
+}
 int main()
 {
     Graph graph;
+    
+    
     graph.generatePath();
+
+
+
     //graph.displayConnection(graph.getConnection("A"));
-    std::cout<<graph.getConnection()
+    
     std::cout << "Hello World!\n";
 }
 
