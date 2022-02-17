@@ -26,6 +26,7 @@ NodeRecord PathFindingList::getSmallestElement() {
 				nodeToReturn = nodes[i];
 			}
 		}
+		return nodeToReturn;
 	}
 
 }

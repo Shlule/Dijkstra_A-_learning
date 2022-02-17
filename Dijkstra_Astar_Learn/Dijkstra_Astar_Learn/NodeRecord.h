@@ -4,7 +4,7 @@
 class NodeRecord
 {
 public:
-	NodeRecord() {};
+	NodeRecord(int costP, std::string nameP);
 	~NodeRecord() {};
 
 	std::string getName() { return name; };

@@ -8,7 +8,8 @@ int main()
 {
     Graph graph;
     graph.generatePath();
-    graph.displayConnection(graph.connections);
+    //graph.displayConnection(graph.getConnection("A"));
+    std::cout<<graph.getConnection()
     std::cout << "Hello World!\n";
 }
 
