@@ -1,3 +1,12 @@
 ﻿  Dijkstra_Astar_Learn.cpp
-C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn.cpp(27,23): warning C4018: '<' : incompatibilité signed/unsigned
-  Dijkstra_Astar_Learn.vcxproj -> C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Debug\Dijkstra_Astar_Learn.exe
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn.cpp(33,27): warning C4018: '<' : incompatibilité signed/unsigned
+  PathFindingList.cpp
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\PathFindingList.cpp(10,21): warning C4018: '<' : incompatibilité signed/unsigned
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\PathFindingList.cpp(23,21): warning C4018: '<' : incompatibilité signed/unsigned
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\PathFindingList.cpp(36,21): warning C4018: '<' : incompatibilité signed/unsigned
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\PathFindingList.cpp(49,40): error C2761: 'bool PathFindingList::isContain(std::string)' : la redéclaration du membre n'est pas autorisée
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\PathFindingList.cpp(49,33): error C2065: 'string' : identificateur non déclaré
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\PathFindingList.cpp(49,40): error C2146: erreur de syntaxe : absence de ')' avant l'identificateur 'nameP'
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\PathFindingList.cpp(49,47): error C2143: erreur de syntaxe : absence de ';' avant '{'
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\PathFindingList.cpp(49,47): error C2447: '{' : en-tête de fonction manquant (liste formelle à l'ancien format ?)
+  Génération de code en cours...

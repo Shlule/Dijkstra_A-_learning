@@ -13,21 +13,53 @@ void getGraphSolution(Graph& graphP, string start, string end) {
     PathFindingList close;
     NodeRecord currentNode;
     vector<Connection>temp;
+    string endNode;
+    int endNodeCost;
 
 
     // verify if the start and end node exist in the graph
     if (graphP.isNodeExist(start) && graphP.isNodeExist(end)) {
         // initialize startNode
         currentNode = NodeRecord(0, start);
+        open.AddNode(currentNode);
+    }
+    while (open.length()>0) {
+
+        currentNode = open.getSmallestElement();
+        if (currentNode.getName() == end)break;
+
+        temp = graphP.getConnection(currentNode.getName());
+
+        for (int i = 0; i < temp.size(); i++) {
+            endNode = temp[i].getToNode();
+            endNodeCost = currentNode.getCostSoFar() + temp[i].getCost();
+            if (close.isContain(endNode))continue;
+            else if {
+
+            }
+                
+         
+        }
+
+       /* temp = graphP.getConnection(currentNode.getName());
+
+        for (int i = 0; i < temp.size(); i++) {
+            open.AddNode(NodeRecord(temp[i].getCost(), temp[i].getToNode()));
+        }
+
+        for (int i = 0; i < close.getList().size(); i++) {
+            open.RemoveNode(close.getList()[i]);
+        }
+
+        currentNode.setName(open.getSmallestElement().getName());
+        currentNode.setCost(currentNode.getCostSoFar() + open.getSmallestElement().getCostSoFar());
         close.AddNode(currentNode);
+        open.RemoveNode(currentNode);
+
+        currentNode.display();*/
+
     }
-
-    temp = graphP.getConnection(currentNode.getName());
-
-    for (int i = 0; i < temp.size(); i++) {
-        open.AddNode(NodeRecord(temp[i].getCost(), temp[i].getToNode()));
-    }
-
+    
     open.display();
 
 

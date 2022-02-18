@@ -1,5 +1,6 @@
 #include "PathFindingList.h"
 using std::cout;
+using std::string;
 
 void PathFindingList::AddNode(NodeRecord nodeP) {
 	nodes.emplace_back(nodeP);
@@ -42,4 +43,16 @@ void PathFindingList::display() {
 		cout << "impossible your list is empty\n";
 	}
 	
+}
+int PathFindingList::length() {
+	return nodes.size();
+}
+bool PathFindingList::isContain(string nameP) {
+	bool corresponding = false;
+	for (int i = 0; i < nodes.size(); i++) {
+		if (nodes[i].getName() == nameP) {
+			corresponding = true;
+		}
+	}
+	return corresponding;
 }
