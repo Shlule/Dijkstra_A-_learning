@@ -15,6 +15,8 @@ void getGraphSolution(Graph& graphP, string start, string end) {
     vector<Connection>temp;
     string endNode;
     int endNodeCost;
+    NodeRecord endNodeRecord;
+    vector<string> path;
 
 
     // verify if the start and end node exist in the graph
@@ -34,10 +36,34 @@ void getGraphSolution(Graph& graphP, string start, string end) {
             endNode = temp[i].getToNode();
             endNodeCost = currentNode.getCostSoFar() + temp[i].getCost();
             if (close.isContain(endNode))continue;
-            else if {
-
+            else if(open.isContain(endNode)) {
+                endNodeRecord = open.getElementByString(endNode);
+                if (endNodeRecord.getCostSoFar() <= endNodeCost)continue;
             }
-                
+            else {
+                endNodeRecord = NodeRecord();
+                endNodeRecord.setName(endNode);
+            }
+            endNodeRecord.setCost(endNodeCost);
+            // attention il y a peut etre une erreur a ce niveau la
+            
+
+            if (!open.isContain(endNode)) {
+                open.AddNode(endNodeRecord);
+            }
+            
+            open.RemoveNode(currentNode);
+            close.AddNode(currentNode);
+
+            if (currentNode.getName() != end) {
+                return ;
+            }
+
+            else {
+                while (currentNode.getName() != start) {
+
+               }
+            }
          
         }
 

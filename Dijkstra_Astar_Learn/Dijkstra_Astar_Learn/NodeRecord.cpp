@@ -15,3 +15,6 @@ void NodeRecord::setCost(int costP) {
 void NodeRecord::display() {
 	cout << name << " " << costSoFar << " \n";
 }
+void NodeRecord::setFromNode(string fromNodeP) {
+	fromNode = fromNodeP;
+}

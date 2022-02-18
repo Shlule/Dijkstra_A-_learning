@@ -56,3 +56,12 @@ bool PathFindingList::isContain(string nameP) {
 	}
 	return corresponding;
 }
+NodeRecord PathFindingList::getElementByString(string nameP){
+	if (nodes.size() != 0) {
+		for (int i = 0; i < nodes.size(); i++) {
+			if (nodes[i].getName() == nameP) {
+				return nodes[i];
+			}
+		}
+	}
+}
