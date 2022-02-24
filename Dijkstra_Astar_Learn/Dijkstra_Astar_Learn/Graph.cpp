@@ -54,7 +54,7 @@ vector<Connection> Graph::getConnection(string fromNodeP) {
 	}
 	else {
 		vector<Connection> ConnectionToSave;
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < connections.size(); i++) {
 			if (connections[i].getFromNode() == fromNodeP) {
 				ConnectionToSave.emplace_back(connections[i]);
 			}
