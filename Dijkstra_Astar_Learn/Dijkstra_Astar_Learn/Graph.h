@@ -1,6 +1,7 @@
 #pragma once
 #include<vector>
 #include<iostream>
+#include<algorithm>
 #include"Connection.h"
 class Graph
 {
@@ -12,7 +13,14 @@ public:
 	std::vector<Connection> getConnection(std::string fromNodeP);
 	void displayConnection(const std::vector<Connection>& connections)const;
 	bool isNodeExist(std::string nameP);
-	void generatePath();
+	void generateGraph();
+
+
+	void generateGraphAStar();
+	void decroissantSortingList(std::vector<int> &listP);
+	std::vector<int> getHCostList() { return hCostList; }
+
+
 	int bNum = 1000;
 	int matriceProxi[7][7]{
 		// a,b,c,d,e,f,g
@@ -27,6 +35,6 @@ public:
 	std::vector<Connection> connections;
 private:
 	std::vector<std::string> nodeNames{ "A","B","C","D","E","F","G" };
-
+	std::vector<int> hCostList{ 1,7,5,6,3,9 };
 };
 

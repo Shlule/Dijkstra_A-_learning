@@ -7,89 +7,15 @@
 #include <iostream>
 using namespace std;
 
-vector<string> getGraphSolution(Graph& graphP, string start, string end) {
-    // j'initialise les open and close list
-    PathFindingList open;
-    PathFindingList close;
-    NodeRecord currentNode;
-    vector<Connection>temp;
-    string endNode;
-    int endNodeCost;
-    NodeRecord endNodeRecord;
-    vector<string> path;
-
-
-    // verify if the start and end node exist in the graph
-    if (graphP.isNodeExist(start) && graphP.isNodeExist(end)) {
-        // initialize startNode
-        currentNode = NodeRecord(0, start);
-        open.AddNode(currentNode);
-    }
-    while (open.length() > 0) {
-
-        currentNode = open.getSmallestElement();
-        if (currentNode.getName() == end)break;
-
-        temp = graphP.getConnection(currentNode.getName());
-
-        for (int i = 0; i < temp.size(); i++) {
-            endNode = temp[i].getToNode();
-            endNodeCost = currentNode.getCostSoFar() + temp[i].getCost();
-            if (close.isContain(endNode))continue;
-            else if (open.isContain(endNode)) {
-                endNodeRecord = open.getElementByString(endNode);
-                if (endNodeRecord.getCostSoFar() <= endNodeCost)continue;
-            }
-            else {
-                endNodeRecord = NodeRecord();
-                endNodeRecord.setName(endNode);
-            }
-            endNodeRecord.setCost(endNodeCost);
-            // attention il y a peut etre une erreur a ce niveau la
-            endNodeRecord.setFromNode(temp[i].getFromNode());
-
-
-            if (!open.isContain(endNode)) {
-                open.AddNode(endNodeRecord);
-            }
-
-        }
-
-        open.RemoveNode(currentNode);
-        close.AddNode(currentNode);
-        
-    }
-
-    if (currentNode.getName() != end) {
-        return{};
-    }
-
-    else {
-        while (currentNode.getName() != start) {
-            path.emplace_back(currentNode.getFromNode());
-        }
-    return path;
-}
-
-       /* temp = graphP.getConnection(currentNode.getName());
-
-        for (int i = 0; i < temp.size(); i++) {
-            open.AddNode(NodeRecord(temp[i].getCost(), temp[i].getToNode()));
-        }
-
-        for (int i = 0; i < close.getList().size(); i++) {
-            open.RemoveNode(close.getList()[i]);
-        }
-
-        currentNode.setName(open.getSmallestElement().getName());
-        currentNode.setCost(currentNode.getCostSoFar() + open.getSmallestElement().getCostSoFar());
-        close.AddNode(currentNode);
-        open.RemoveNode(currentNode);
-
-        currentNode.display();*/
-}
-    
-void getSolution(Graph graphP, string start, string end) {
+//vector<string> reverseStringVector(vector<string> vectorP) {
+//    vector<string> solution;
+//    for (int i = vectorP.size(); i >0; i--) {
+//        solution.emplace_back(vectorP[i]);
+//    }
+//    return solution;
+//}
+//    
+void PathDijkstra(Graph graphP, string start, string end) {
 
     PathFindingList open;
     PathFindingList close;
@@ -111,8 +37,7 @@ void getSolution(Graph graphP, string start, string end) {
     while (open.length() > 0) {
         //je prend le plus petit element de la open list
         currentNode = open.getSmallestElement();
-        //if (currentNode.getName() == end)break;
-        path.emplace_back(currentNode.getFromNode());
+        if (currentNode.getName() == end)break;
         // je recupere les connections possible du currentNode
         temp = graphP.getConnection(currentNode.getName());
         //pour chaque connection possible 
@@ -160,9 +85,16 @@ void getSolution(Graph graphP, string start, string end) {
 
         
     }
+    while (currentNode.getName() != start) {
+        path.emplace_back(currentNode.getName());
+        currentNode = close.getElementByString(currentNode.getFromNode());
+    }
+    path.emplace_back(start);
+    // il faut maintenant inversée la liste et l'afficher
+    /*path = reverseStringVector(path);
     for (int i = 0; i < path.size(); i++) {
         cout << path[i] << endl;
-    }
+    }*/
 }
 
 
@@ -172,8 +104,12 @@ int main()
     Graph graph;
     vector<string> solution;
     vector<Connection> connection;
-    graph.generatePath();
-    getSolution(graph, "A", "F");
+   /* graph.generateGraph();
+    PathDijkstra(graph, "A", "F");*/
+    graph.generateGraphAStar();
+    
+
+   
 
 
     /*connection = graph.getConnection("C");
