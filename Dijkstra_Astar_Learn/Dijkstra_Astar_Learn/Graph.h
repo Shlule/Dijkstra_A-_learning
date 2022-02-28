@@ -35,6 +35,6 @@ public:
 	std::vector<Connection> connections;
 private:
 	std::vector<std::string> nodeNames{ "A","B","C","D","E","F","G" };
-	std::vector<int> hCostList{ 1,7,5,6,3,9 };
+	std::vector<int> hCostList{ 9,7,6,6,3,0,3 };
 };
 

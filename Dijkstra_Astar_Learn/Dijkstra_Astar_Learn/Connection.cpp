@@ -8,14 +8,14 @@ Connection::Connection(int costP, string fromNodeP, string toNodeP) :
 	toNode(toNodeP)
 {}
 
-Connection::Connection(int costP, int hcostP, int fcostP, std::string fromNodeP, std::string toNodeP) :
+Connection::Connection(int costP, int hcostP,int fCostP, std::string fromNodeP, std::string toNodeP) :
 	cost(costP),
 	hCost(hcostP),
-	fCost(fcostP),
+	fCost(fCostP),
 	fromNode(fromNodeP),
 	toNode(toNodeP)
 {}
 
 void Connection::display() const{
-	cout << cost << " " << fromNode << " " << toNode << " \n";
+	cout << cost << " " << fromNode << " " << toNode <<" " <<hCost << " "<<fCost << " \n";
 }

@@ -82,8 +82,6 @@ void PathDijkstra(Graph graphP, string start, string end) {
         // j'ajoute le current node dans la close list;
         close.AddNode(currentNode);
         
-
-        
     }
     while (currentNode.getName() != start) {
         path.emplace_back(currentNode.getName());
@@ -97,6 +95,21 @@ void PathDijkstra(Graph graphP, string start, string end) {
     }*/
 }
 
+void pathAStar(Graph graphP, string start, string end) {
+    PathFindingList open;
+    PathFindingList close;
+    vector<Connection> temp;
+    NodeRecord currentNode;
+    vector<string> path;
+    NodeRecord endNodeRecord;
+    int endfcost;
+    int endhcost;
+
+   /* if (graphP.isNodeExist(start) && graphP.isNodeExist(end)) {
+        currentNode = NodeRecord(0,graphP.)
+    }*/
+}
+
 
 
 int main()
@@ -106,7 +119,10 @@ int main()
     vector<Connection> connection;
    /* graph.generateGraph();
     PathDijkstra(graph, "A", "F");*/
+    
+
     graph.generateGraphAStar();
+    graph.displayConnection(graph.connections);
     
 
    

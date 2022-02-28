@@ -24,10 +24,25 @@ void Graph::generateGraph() {
 }
 
 void Graph::generateGraphAStar() {
-	//je genere le Graphe avec mon ancienne methode generateGraph()
-	decroissantSortingList(hCostList);
-	for (int i = 0; i < hCostList.size(); i++) {
-		cout << hCostList[i] << endl;
+	for (int i = 0; i < 7; i++) {
+		//j'initialise une variable avec la ieme valeur de mon vecteur nodeNames
+		string fromNode = nodeNames[i];
+		int hCost = hCostList[i];
+		// ici je traite le colone
+		for (int j = 0; j < 7; j++) {
+			// si la valeur situer en[i]et[j] sur ma matricedeproxi
+			if (matriceProxi[i][j] != 0 && matriceProxi[i][j] != bNum) {
+				//j'initialise une variable avec la j-ieme valeur du vecteur Nodename
+				string toNode = nodeNames[j];
+				//j'initialise une variable vala le cout d'un trajet
+				int cost = matriceProxi[i][j];
+				int fcost = cost + hCost;
+				//je creer un objet Connection ayant pour parametre les variable precedement initialisées
+				Connection connection(cost,hCost,fcost, fromNode, toNode);
+				//je l'ajoute au tableau
+				connections.emplace_back(connection);
+			}
+		}
 	}
 }
 void Graph::decroissantSortingList(vector<int> &listP) {
