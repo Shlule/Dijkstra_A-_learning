@@ -7,14 +7,14 @@
 #include <iostream>
 using namespace std;
 
-//vector<string> reverseStringVector(vector<string> vectorP) {
-//    vector<string> solution;
-//    for (int i = vectorP.size(); i >0; i--) {
-//        solution.emplace_back(vectorP[i]);
-//    }
-//    return solution;
-//}
-//    
+vector<string> reverseStringVector(vector<string>& vectorP) {
+    vector<string> solution;
+    for (int i = vectorP.size()-1; i >=0; i--) {
+        solution.emplace_back(vectorP[i]);
+    }
+    return solution;
+}
+    
 void PathDijkstra(Graph graphP, string start, string end) {
 
     PathFindingList open;
@@ -83,31 +83,83 @@ void PathDijkstra(Graph graphP, string start, string end) {
         close.AddNode(currentNode);
         
     }
+    
     while (currentNode.getName() != start) {
         path.emplace_back(currentNode.getName());
         currentNode = close.getElementByString(currentNode.getFromNode());
     }
     path.emplace_back(start);
+   
     // il faut maintenant inversée la liste et l'afficher
-    /*path = reverseStringVector(path);
+    path = reverseStringVector(path);
     for (int i = 0; i < path.size(); i++) {
+        
         cout << path[i] << endl;
-    }*/
+    }
 }
 
-void pathAStar(Graph graphP, string start, string end) {
+void PathAStar(Graph graphP, string start, string end) {
     PathFindingList open;
     PathFindingList close;
     vector<Connection> temp;
     NodeRecord currentNode;
     vector<string> path;
     NodeRecord endNodeRecord;
+    string endNode;
+    int endgCost;
     int endfcost;
     int endhcost;
 
-   /* if (graphP.isNodeExist(start) && graphP.isNodeExist(end)) {
-        currentNode = NodeRecord(0,graphP.)
-    }*/
+    if (graphP.isNodeExist(start) && graphP.isNodeExist(end)) {
+        currentNode = NodeRecord(0, graphP.connections[0].getHCost(), graphP.connections[0].getFCost(), start);
+        open.AddNode(currentNode);
+    }
+
+    while (open.length() > 0) {
+        currentNode = open.getSmallestElement();
+        if (currentNode.getName() == end)break;
+
+        temp = graphP.getConnection(currentNode.getName());
+
+        for (int i = 0; i < temp.size(); i++) {
+            endgCost = currentNode.getCostSoFar() + temp[i].getCost();
+            endhcost = temp[i].getHCost();
+            endfcost = endhcost + endgCost;
+            endNode = temp[i].getToNode();
+
+            if (close.isContain(endNode))continue;
+            else if (open.isContain(endNode)) {
+                endNodeRecord=open.getElementByString(endNode);
+                if (endNodeRecord.getFCost() <= endfcost)continue;
+                else if (endNodeRecord.getHCost() < endhcost)continue;
+                else {
+                    open.RemoveNode(endNodeRecord);
+                    endNodeRecord = NodeRecord(endgCost, endhcost, endfcost, endNode);
+                    endNodeRecord.setFromNode(currentNode.getName());
+                    open.AddNode(endNodeRecord);
+                }
+            }
+            else {
+                endNodeRecord = NodeRecord(endgCost, endhcost, endfcost, endNode);
+                endNodeRecord.setFromNode(currentNode.getName());
+            }
+            if (!open.isContain(endNode)) {
+                open.AddNode(endNodeRecord);
+            }
+        }
+        open.RemoveNode(currentNode);
+        close.AddNode(currentNode);
+
+    }
+    while (currentNode.getName() != start) {
+        path.emplace_back(currentNode.getName());
+        currentNode = close.getElementByString(currentNode.getFromNode());
+    }
+    path.emplace_back(start);
+    path = reverseStringVector(path);
+    for (int i = 0; i < path.size(); i++) {
+        cout << path[i] << endl;
+    }
 }
 
 
@@ -117,13 +169,13 @@ int main()
     Graph graph;
     vector<string> solution;
     vector<Connection> connection;
-   /* graph.generateGraph();
+  
+    /*graph.generateGraph();
     PathDijkstra(graph, "A", "F");*/
     
 
     graph.generateGraphAStar();
-    graph.displayConnection(graph.connections);
-    
+    PathAStar(graph, "A", "F");
 
    
 

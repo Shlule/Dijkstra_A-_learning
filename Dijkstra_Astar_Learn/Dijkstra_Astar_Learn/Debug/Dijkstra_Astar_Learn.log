@@ -1,8 +1,6 @@
-﻿  Connection.cpp
-  Graph.cpp
-C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\Graph.cpp(81,20): warning C4018: '<' : incompatibilité signed/unsigned
-C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\Graph.cpp(93,21): warning C4018: '<' : incompatibilité signed/unsigned
-C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\Graph.cpp(106,20): warning C4018: '<' : incompatibilité signed/unsigned
-  Génération de code en cours...
-C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\Graph.cpp(102): warning C4715: 'Graph::getConnection' : les chemins de contrôle ne retournent pas tous une valeur
+﻿  Dijkstra_Astar_Learn.cpp
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn.cpp(44,27): warning C4018: '<' : incompatibilité signed/unsigned
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn.cpp(95,23): warning C4018: '<' : incompatibilité signed/unsigned
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn.cpp(124,27): warning C4018: '<' : incompatibilité signed/unsigned
+C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn\Dijkstra_Astar_Learn.cpp(160,23): warning C4018: '<' : incompatibilité signed/unsigned
   Dijkstra_Astar_Learn.vcxproj -> C:\SchoolWork\Dijkstra_A-_learning\Dijkstra_Astar_Learn\Debug\Dijkstra_Astar_Learn.exe
